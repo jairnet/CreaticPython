@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <!-- Compiled and minified CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+   
+    <title>Dashboard | {{ titulo }}</title>
+</head>
+<body>
+    <!-- NavBar -->
+    <nav>
+        <div class="nav-wrapper cyan">
+            <a href="#!" class="brand-logo">PlaceSoft</a> 
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+            <li><a href="sass.html">Inicio</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">Javascript</a></li>
+            <li><a href="mobile.html">Mobile</a></li>
+            <li><a class="waves-effect waves-light btn red">{{ titulo }}</a></li>
+            </ul>
+        </div>
+        </nav>
+    
+        <ul class="sidenav" id="mobile-demo">
+        <li><a href="sass.html">Inicio</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+        <li><a class="waves-effect waves-light btn">Registrate</a></li>
+        </ul>
+    
+    <!-- servicios -->
+    <div class="container">
+        <div class="section">
+    
+        <div class="row">
+        <div class="col s12 m4">   
+            <a class="waves-effect waves-light" href="">
+                <i class="medium material-icons red-text">business</i>
+                <h4 class="red-text">Coopropiedades</h4>
+            </a>
+            <div class="card-content">
+                <p>Crea y actualiza la informacion de los conjutos cerrados que administras.</p>
+            </div>
+        </div>
+        
+        <div class="col s12 m4"> 
+            <a class="waves-effect waves-light" href="">
+                <i class="medium material-icons blue-text">contact_phone</i>
+                <h4 class="blue-text">Residentes</h4>
+            </a>
+            <div class="card-content">
+                <p>Crea y actualiza la informacion de los conjutos cerrados que administras.</p>
+            </div>
+        </div>
+    
+        <div class="col s12 m4">
+            <a class="waves-effect waves-light" href="">
+                <i href="" class="medium material-icons green-text">forum</i>
+                <h4 class="green-text">P Q R</h4>
+            </a>
+            <div class="card-content">
+                <p>Comunicate mas facil con tu administrador y deja evidencia de tus Preguntas Quejas y Rrespuestas</p>
+            </div>
+        </div>
+
+    <div class="row">
+        <div class="col s12 m4">
+            <a class="waves-effect waves-light" href="">
+                <i class="medium material-icons orange-text">date_range</i>
+                <h4 class="orange-text">Reservas</h4>
+            </a>
+            <div class="card-content">
+                <p>Revisa que zonas de comunes de tu conjunto estan disponibles.</p>
+            </div>
+        </div>
+    
+        
+        <div class="col s12 m4">
+            <a class="waves-effect waves-light" href="">
+                <i class="medium material-icons purple-text">poll</i>
+                <h4 class="purple-text">Presupuesto</h4>
+            </a>
+            <div class="card-content">
+                <p>Revisa las finanzas de tu conjunto residencial.</p>
+            </div>
+        </div>
+     
+        <div class="col s12 m4">
+            <a class="waves-effect waves-light" href="">
+                <i href="" class="medium material-icons pink-text">folder_shared</i>
+                <h4 class="pink-text">Publicos</h4>
+            </a>
+            <div class="card-content">
+                <p>Documentos publicos de interes puedes verlos aqui.</p>
+            </div>
+        </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m4">
+                <a class="waves-effect waves-light" href="">
+                    <i class="medium material-icons teal-text">local_library</i>
+                    <h4 class="teal-text">Publicaciones</h4>
+                </a>
+                <div class="card-content">
+                    <p>Ventas y noticias del conjunto cerrado.</p>
+                </div>
+            </div>
+            
+            <div class="col s12 m4">
+                <a class="waves-effect waves-light" href="">
+                    <i class="medium material-icons amber-text">laptop_mac</i>
+                    <h4 class="amber-text">Pagos en Linea</h4>
+                </a>
+                <div class="card-content">
+                    <p>Solo registrate y paga en linea la administracion.</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div> 
+    <!-- Fixed Button -->
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red">
+          <i class="large material-icons">add</i>
+        </a>
+        <ul>
+          <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+          <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+          <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+          <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+        </ul>
+      </div>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function(){
+        $('.fixed-action-btn').floatingActionButton();
+    });
+    $(document).ready(function(){
+        $('.sidenav').sidenav();
+    });
+  </script>
+</body>
+</html>
