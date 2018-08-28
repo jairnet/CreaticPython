@@ -32,7 +32,8 @@ class CoopropiedadListView(ListView):
 
     # def get_queryset(self, *args, **kwars):
     #     qs = super(CoopropiedadListView, self).get_queryset(*args, **kwars)
-    #     return qs
+    #     query = Coopropiedad.objects.filter(nombre_coopropiedad == 'Altos de la Pamba')
+    #     return query
 
 class CoopropiedadDetailView(DetailView):
     model = Coopropiedad

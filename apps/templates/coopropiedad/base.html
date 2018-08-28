@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <!--Import Google Icon Font-->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    {% block title %}
+     
+     {% endblock %}
+</head>
+<body>
+    {% block navbar %}
+    <nav>
+        <div class="nav-wrapper cyan">
+            <a href="{% url 'index' %}" class="brand-logo">PlaceSoft</a> 
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+            <li><a href="">Inicio</a></li>
+            <li><a href="">Components</a></li>
+            <li><a href="">Javascript</a></li>
+            <li><a href="">Mobile</a></li>
+            <li><a class="waves-effect waves-light btn red">{{ titulo }}</a></li>
+            </ul>
+        </div>
+        </nav>
+    
+        <ul class="sidenav" id="mobile-demo">
+        <li><a href="">Inicio</a></li>
+        <li><a href="">Components</a></li>
+        <li><a href="">Javascript</a></li>
+        <li><a href="">Mobile</a></li>
+        <li><a class="waves-effect waves-light btn">Registrate</a></li>
+        </ul>
+    {% endblock %}
+    {% block contenido %}
+    {% endblock %}
+ <!--  Scripts-->
+ <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+</body>
+</html>

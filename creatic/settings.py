@@ -55,6 +55,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'creatic.urls'
 
+LOGIN_REDIRECT_URL = '/dashboard'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

@@ -1,5 +1,11 @@
+{% extends "coopropiedad/base.html" %}
+{% block title%}<title>Coopropiedades|Crear</title>{% endblock %}
+{% block contenido %}
+<div class="container">
 <form action="" method="POST">
     {% csrf_token %}
     {{form.as_p}}
-    <input type="submit" name='Enviar'>
+    <input class="btn" type="submit" name='Enviar'>
 </form>
+</div>
+{% endblock %}

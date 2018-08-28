@@ -1,6 +1,11 @@
+{% extends "coopropiedad/base.html" %}
+
+{% block contenido %}
+{% block title%}<title>Coopropiedades|{{ object.nombre_coopropiedad }}</title>{% endblock %}
 <h1>Detalle Coopropiedad</h1>
 <h2>Nombre: {{ object.nombre_coopropiedad }}</h2>
 <h3>Direccion: {{ object.direccion }}</h3>
 <h3>Telefono: {{ object.telefono }}</h3>
 <h3>Nit: {{ object.nit }}</h3>
 <h3>Descripcion: {{ object.descripcion }}</h3>
+{% endblock %}

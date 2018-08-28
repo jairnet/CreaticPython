@@ -1,4 +1,9 @@
+{% extends "coopropiedad/base.html" %}
+{% block title%}<title>Coopropiedades|Editar</title>{% endblock %}
+{% block contenido %}
+<div class="container">
 <form action="" method="post">{% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Update">
 </form>
+{% endblock %}
