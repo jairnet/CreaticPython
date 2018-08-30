@@ -1,1 +1,1 @@
-web: gunicorn creatic.wsgi -b 0.0.0.0
+web: gunicorn creatic.wsgi 0.0.0.0:$PORT
