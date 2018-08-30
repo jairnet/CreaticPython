@@ -25,7 +25,7 @@ SECRET_KEY = 'y!&2=f4&5m5=p3*yzk=z+ocyu4#r6c_-1)6i%03s2(_4*kq+r%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['placesoft.herokuapp.com']
 
 
 # Application definition
@@ -48,6 +48,9 @@ INSTALLED_APPS = [
     'apps.residentes',
     'apps.pqr',
     'apps.snippets',
+    'psycopg2',
+    'gunicorn',
+
 ]
 
 # AUTH_USER_MODEL = 'usuarios.User'
@@ -140,8 +143,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT = 'media/'
+MEDIA_URL = 'media/'

@@ -19,7 +19,7 @@ class Pqr(models.Model):
 class Comentarios(models.Model):
     pqr = models.ForeignKey(Pqr, null=True, blank=True, related_name='pqrs', on_delete=models.SET_NULL)
     texto = models.TextField(max_length=1000, blank=True)
-    fecha = models.DateField()
+    fecha = models.DateField(2)
     emisor = models.CharField(max_length=15, blank=False, choices=choices.EMISOR)
     estado = models.CharField(max_length=15, blank=True, choices=choices.ESTADO_PQR)
 
