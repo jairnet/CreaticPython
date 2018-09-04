@@ -1,12 +1,12 @@
 # from django.shortcuts import render
 from rest_framework import serializers
-from apps.coopropiedad.models import *
+from apps.copropiedad.models import *
 from apps.residentes.models import *
 from apps.inmueble.models import *
 
-class coopropiedad_serializer(serializers.HyperlinkedModelSerializer):
+class copropiedad_serializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Coopropiedad
+        model = Copropiedad
         fields = '__all__'
 
 class residentes_serializer(serializers.HyperlinkedModelSerializer):

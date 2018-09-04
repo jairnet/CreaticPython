@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title%}<title>Copropiedades|Editar</title>{% endblock %}
+{% block contenido %}
+<div class="container">
+<form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input class="btn" type="submit" value="Guardar Cambios">
+</form>
+<br>
+{% endblock %}

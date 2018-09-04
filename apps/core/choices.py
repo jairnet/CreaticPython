@@ -53,12 +53,6 @@ ESTADO_PQR = (
     (3,'En Proceso'),
 )
 
-EMISOR = (
-    ('',''),
-    (1,'Residente'),
-    (2,'Administrador'),
-)
-
 ROL_USUARIO = (
     ('',''),
     (1,'Habitante'),

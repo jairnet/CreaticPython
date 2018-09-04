@@ -1,23 +1,8 @@
-{% extends "home/base.html" %}
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
-    <!--Import Google Icon Font-->
-    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
-   <!-- Compiled and minified CSS -->
-   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
-   
-    <title>Dashboard | {{ titulo }}</title>
-</head>
-<body> -->
-    <!-- NavBar -->
-    
-    
+{% extends "base.html" %}
     <!-- servicios -->
+    {% block title %}
+    <title>Dashboard | Copropiedad</title>
+    {% endblock %}
     {% block contenido %}
     <div class="container">
         <div class="section">
@@ -26,7 +11,7 @@
         <div class="col s12 m4">   
             <a class="waves-effect waves-light" href="{% url 'lista' %}">
                 <i class="medium material-icons red-text">business</i>
-                <h4 class="red-text">Coopropiedades</h4>
+                <h4 class="red-text">Copropiedades</h4>
             </a>
             <div class="card-content">
                 <p>Crea y actualiza la informacion de los conjutos cerrados que administras.</p>
@@ -125,14 +110,14 @@
   <!--  Scripts-->
   <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script> -->
-  <script>
+  
+{% block scripts %}
+<script>
     $(document).ready(function(){
         $('.fixed-action-btn').floatingActionButton();
     });
-    $(document).ready(function(){
-        $('.sidenav').sidenav();
-    });
-  </script>
+</script>
+{% endblock %}
   
 <!-- </body>
 </html> -->

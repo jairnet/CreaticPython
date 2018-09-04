@@ -1,0 +1,131 @@
+{% load static %}
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+  <style>
+    body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1 0 auto;
+    }
+
+    body {
+      background: "{% static 'img/architecture.jpg' %}";
+    }
+
+    .input-field input[type=date]:focus + label,
+    .input-field input[type=text]:focus + label,
+    .input-field input[type=email]:focus + label,
+    .input-field input[type=password]:focus + label {
+      color: #e91e63;
+    }
+
+    .input-field input[type=date]:focus,
+    .input-field input[type=text]:focus,
+    .input-field input[type=email]:focus,
+    .input-field input[type=password]:focus {
+      border-bottom: 2px solid #e91e63;
+      box-shadow: none;
+    }
+  </style>
+</head>
+
+<body>
+  {% include 'usuarios/navbar.html' %}
+  <div class="section"></div>
+  <main>
+    <center>
+      <!-- <img class="responsive-img" style="width: 250px;" src="https://i.imgur.com/ax0NCsK.gif" /> -->
+      <!-- <h4 class="indigo-text">PlaceSoft</h4> -->
+      <div class="section"></div>
+
+      <h5 class="indigo-text">Registrate</h5>
+     
+      <div class="section"></div>
+
+      <div class="container">
+        <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+          {% if error %}
+            <p style="color: red;">{{ error }}</p>
+          {% endif %}
+          
+
+          <form class="col s12" method="POST" action="{% url 'signup' %}">
+            {% csrf_token %}
+            <div class='row'>
+              <div class='col s12'>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input class='validate' type='text' name='username' id='username' required='true'/>
+                <label for='username'>Nombre de Usuario</label>
+              </div>
+            </div>
+
+            <div class='row'>
+                <div class='input-field col s12'>
+                  <input class='validate' type='text' name='first_name' id='first_name' required='true'/>
+                  <label for='first_name'>Nombres</label>
+                </div>
+              </div>
+
+              <div class='row'>
+                  <div class='input-field col s12'>
+                    <input class='validate' type='text' name='last_name' id='last_name' required='true'/>
+                    <label for='last_name'>Apellidos</label>
+                  </div>
+                </div>
+
+                <div class='row'>
+                    <div class='input-field col s12'>
+                      <input class='validate' type='email' name='email' id='email' />
+                      <label for='email'>Email</label>
+                    </div>
+                </div>
+
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input class='validate' type='password' name='password' id='password' />
+                <label for='password'>Password</label>
+              </div>
+            </div>
+
+                <div class='row'>
+                  <div class='input-field col s12'>
+                    <input class='validate' type='password' name='password_confirmation' id='password_confirmation' />
+                    <label for='password'>Confirma tu Password</label>
+                  </div>
+                </div>
+
+              <!-- <label style='float: right;'>
+								<a class='pink-text' href='#!'><b>Perdiste tu Password?</b></a>
+							</label> -->
+
+            <br />
+            <center>
+              <div class='row'>
+                <button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect indigo'>Registrate</button>
+              </div>
+            </center>
+          </form>
+        </div>
+      </div>
+      <a href="{% url 'login' %}">Ingresa si ya estas registrado</a>
+    </center>
+
+    <div class="section"></div>
+    <div class="section"></div>
+  </main>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+</body>
+
+</html>

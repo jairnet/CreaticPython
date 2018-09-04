@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Place Soft | Plataforma para administrar condominios</title>
+    <title>PlaceSoft | Plataforma para administrar condominios</title>
     <meta name="description" content="Material design landing page template built by TemplateFlip.com"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
@@ -23,9 +23,9 @@
               <li class="nav-item"><a class="nav-link active" href="#about">Nosotros</a></li>
               <li class="nav-item"><a class="nav-link" href="#projects">Clientes</a></li>
               <li class="nav-item"><a class="nav-link" href="#pricing">Precios</a></li>
-              <!-- <li class="nav-item"><a class="nav-link" href="#team">Equipo</a></li> -->
               <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
-            </ul><a class="btn btn-primary btn-rounded my-0" href="{% url 'login' %}" target="_blank">Ingresa</a>
+              <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Ingersa</a></li>
+            </ul><a class="btn btn-primary btn-rounded my-0" href="{% url 'signup' %}" target="_blank">Registrate</a>
           </div>
         </div>
       </nav>
@@ -34,15 +34,14 @@
         <div class="full-bg-img d-flex align-items-center">
           <div class="container">
             <div class="row no-gutters">
-              <div class="col-md-10 col-lg-6 text-center text-md-left margins">
+              <div class="col-md-10 col-lg-8 text-center text-md-left margins">
                 <div class="white-text">
                   <div class="wow fadeInLeft" data-wow-delay="0.3s">
-                    <h1 class="h1-responsive font-bold mt-sm-5">Mejorar la Comunicacion es Nuestra Mision.</h1>
+                    <br>
+                    <h1 class="h1-responsive font-bold mt-sm-5">Mejorar la Comunicacion es Nuestro Trabajo.</h1>
                     <div class="h6">
-                      Cuando un administrador tiene a su cargo mas de un conjunto residencial, la comunicacion con 
-                      las personas que habitan estos lugares se convierte en un reto diario. PlaceSoft ofrece a los 
-                      administradores y habitantes una plataforma que centraliza la informacion que muchas veces pasas por 
-                      alto en un Conjunto Cerrado.
+                      Cuando un administrador tiene a su cargo mas de un conjunto residencial, la gestion de cada uno de ellos se 
+                      convierte en un reto diario. PlaceSoft ofrece a los una plataforma que ayuda a los administradores y residentes a mejorar su comunicacion.
                     </div>
                   </div><br>
                   <div class="wow fadeInLeft" data-wow-delay="0.3s"><a class="btn btn-white dark-grey-text font-bold ml-0" href="https://www.youtube.com/watch?v=60ItHLz5WEA" target="_blank"><i class="fa fa-play mr-1"></i>Que es PlaceSoft</a><a class="btn btn-outline-white" href="#">Beneficios</a></div>
@@ -205,7 +204,7 @@
           <div class="text-white text-center pricing-card d-flex align-items-center rgba-stylish-strong py-3 px-3 rounded">
             <div class="card-body">
               <div class="h5">Basico</div>
-              <div class="py-5"><sup class="display-4">$</sup><span class="display-3">50.000</span></div>
+              <div class="py-5"><sup class="display-5">$cop</sup><span class="display-4">50.000</span></div>
               <ul class="list-unstyled">
                 <li>
                   <p><strong>Pago Mensual</strong></p>
@@ -232,7 +231,7 @@
           <div class="text-white text-center pricing-card d-flex align-items-center rgba-teal-strong py-3 px-3 rounded">
             <div class="card-body">
               <div class="h5">Estandar</div>
-              <div class="py-5"><sup class="display-4">$</sup><span class="display-3">80.000</span></div>
+              <div class="py-5"><sup class="display-5">$cop</sup><span class="display-4">80.000</span></div>
               <ul class="list-unstyled">
                <li>
                   <p><strong>Pago Mensual</strong></p>
@@ -259,7 +258,7 @@
           <div class="text-white text-center pricing-card d-flex align-items-center rgba-red-strong py-3 px-3 rounded">
             <div class="card-body">
               <div class="h5">Premium</div>
-              <div class="py-5"><sup class="display-4">$</sup><span class="display-3">150.000</span></div>
+              <div class="py-5"><sup class="display-5">$cop</sup><span class="display-4">150.000</span></div>
               <ul class="list-unstyled">
                 <li>
                   <p><strong>Pago Mensual</strong></p>
@@ -337,7 +336,7 @@
       <div class="wow fadeIn">
         <h2 class="h1 text-white pt-5 pb-3 text-center">Contactenos</h2>
         <p class="text-white px-5 mb-5 pb-3 lead text-center">
-          Gracias por contactar PlaceSoft diligencia el siguiente formulario, a la brevedad recibira noticias de nosotros.
+          Gracias por contactar a PlaceSoft diligencia el siguiente formulario, a la brevedad recibiras noticias de nosotros.
         </p>
       </div>
       <div class="card mb-5 wow fadeInUp" data-wow-delay=".4s">
@@ -401,7 +400,20 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <div class="mb-5 flex-center"><a class="px-3"><i class="fa fa-facebook fa-lg white-text"></i></a><a class="px-3"><i class="fa fa-twitter fa-lg white-text"></i></a><a class="px-3"><i class="fa fa-google-plus fa-lg white-text"></i></a><a class="px-3"><i class="fa fa-linkedin fa-lg white-text"></i></a></div>
+            <div class="mb-5 flex-center">
+              <a class="px-3" href="https://www.facebook.com/PlaceSoft-2091978894376904/">
+                <i class="fa fa-facebook fa-lg white-text"></i>
+              </a>
+              <a class="px-3">
+                <i class="fa fa-twitter fa-lg white-text"></i>
+              </a>
+              <a class="px-3">
+                <i class="fa fa-google-plus fa-lg white-text"></i>
+              </a>
+              <a class="px-3">
+                <i class="fa fa-linkedin fa-lg white-text"></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>

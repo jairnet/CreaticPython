@@ -1,12 +1,12 @@
 from rest_framework import viewsets
-from apps.coopropiedad.models import *
+from apps.copropiedad.models import *
 from apps.residentes.models import *
 from apps.inmueble.models import *
 from . serializers import *
 
-class coopropiedad_viewset(viewsets.ModelViewSet):
-    queryset = Coopropiedad.objects.all()
-    serializer_class = coopropiedad_serializer
+class copropiedad_viewset(viewsets.ModelViewSet):
+    queryset = Copropiedad.objects.all()
+    serializer_class = copropiedad_serializer
 
 class residentes_viewset(viewsets.ModelViewSet):
     queryset = Residente.objects.all()

@@ -25,8 +25,11 @@ SECRET_KEY = 'y!&2=f4&5m5=p3*yzk=z+ocyu4#r6c_-1)6i%03s2(_4*kq+r%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# Django en Heroku
 ALLOWED_HOSTS = ['placesoft.herokuapp.com']
 
+# Django en local
+# ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -41,9 +44,9 @@ INSTALLED_APPS = [
     # Rest Framework app
     'rest_framework',
     # Local apps
-    # 'apps.usuarios',
+    'apps.usuarios',
     'apps.home',
-    'apps.coopropiedad',
+    'apps.copropiedad',
     'apps.inmueble',
     'apps.residentes',
     'apps.pqr',
@@ -70,6 +73,7 @@ REST_FRAMEWORK = {
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+        # 'rest_framework.permissions.AllowAny'
     ]
 }
 
@@ -143,10 +147,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-
 STATIC_URL = '/static/'
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-MEDIA_ROOT = 'media'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static') ###mirar si funciona en heroku
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+"""Nuevas configuraciones de Platzi"""
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
+

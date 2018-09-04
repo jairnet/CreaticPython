@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block contenido %}
+{% block title%}<title>Copropiedades|{{ object.nombre_copropiedad }}</title>{% endblock %}
+<h3 aling="center">Detalle Copropiedad</h3>
+<ul class="collection with-header">
+    <li class="collection-item avatar">
+    <img src="http://localhost:8000/media/coporpiedades/imagen/-1724934625.jpg" alt="" class="circle">
+    <h4>{{ object.nombre_copropiedad }}</h4>
+</li>  
+  
+    <li class="collection-item"><div>Direccion: {{ object.direccion }}<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+    <li class="collection-item"><div>Telefono: {{ object.telefono }}<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+    <li class="collection-item"><div>Nit: {{ object.nit }}<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+    <li class="collection-item"><div>Descripcion: {{ object.descripcion }}<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+</ul>
+
+
+{% endblock %}

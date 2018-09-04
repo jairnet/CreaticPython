@@ -8,9 +8,9 @@ from apps.inmueble.models import Inmueble
 class Residente(models.Model):
     # perfil = models.OneToOneField(Usuario, on_delete=models.CASCADE)
     grupo = models.CharField(max_length=15, blank=False, choices=choices.GRUPO_RESIDENTE, default=0)
-    fecha_inicio = models.DateField(null=True, blank=True)
-    fecha_final = models.DateField(null=True, blank=True)
-    es_propietario = models.BooleanField(default=False, choices=choices.BOOL, default=0)
+    fecha_inicio = models.DateField(blank=True)
+    fecha_final = models.DateField(blank=True)
+    es_propietario = models.BooleanField(default=False, choices=choices.BOOL)
 
     # foreign keys
     inmueble = models.ForeignKey(Inmueble, null=True, blank=True, related_name='inmuebles', on_delete=models.SET_NULL)

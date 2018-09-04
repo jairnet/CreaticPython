@@ -1,14 +1,14 @@
 from django.urls import path, include
 from rest_framework import routers
-from apps.coopropiedad.models import *
+from apps.copropiedad.models import *
 from apps.residentes.models import *
 from apps.inmueble.models import *
 from .serializers import *
-from apps.snippets.views import coopropiedad_viewset,residentes_viewset,inmuebles_viewset
+from apps.snippets.views import copropiedad_viewset,residentes_viewset,inmuebles_viewset
 # from . import views
 
 router = routers.DefaultRouter()
-router.register('coopropiedad', coopropiedad_viewset)
+router.register('copropiedad', copropiedad_viewset)
 router.register('residentes', residentes_viewset)
 router.register('inmueble', inmuebles_viewset)
 

@@ -1,0 +1,58 @@
+{% load static %}
+    <nav>
+        <div class="nav-wrapper indigo">
+            <a href="{% url 'dashboard' %}" class="brand-logo">PlaceSoft</a> 
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+            <li>
+                <a href="">Inicio</a>
+            </li> 
+            <li>  
+                <a href="" class="brand-logo">
+                    <img src="{% static 'img/default-profile.png' %}" height="35" class="d-inline-block align-top rounded-circle"/>
+                </a>
+            </li>
+            <li>
+                -------
+            </li>
+            {% if user.is_authenticated %}
+            <li>
+                <a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Salir</a>
+            </li>
+            {% else %}
+            
+            <li>
+                <a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Ingresar</a>
+            </li>
+            {% endif %}
+                  
+            </ul>
+        </div>
+    </nav>
+    
+    <ul class="sidenav" id="mobile-demo">
+            <li>
+                    <a href="">Inicio</a>
+                </li> 
+                <li>  
+                    <a href="" class="brand-logo">
+                        <img src="{% static 'img/default-profile.png' %}" height="35" class="d-inline-block align-top rounded-circle"/>
+                    </a>
+                </li>
+                {% if user.is_authenticated %}
+                <li>
+                    <a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Salir</a>
+                </li>
+                {% else %}
+                
+                <li>
+                    <a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Ingresar</a>
+                </li>
+                {% endif %}
+    </ul>
+    
+    <script>
+    
+    </script>
+    
+    

@@ -23,9 +23,10 @@ from django.urls import reverse
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('apps.home.urls')),
-    path('coopropiedades/', include('apps.coopropiedad.urls')),
+    path('copropiedades/', include('apps.copropiedad.urls')),
     path('accounts', include('django.contrib.auth.urls')),
     path('', include('apps.snippets.urls')),
+    path('usuarios/', include('apps.usuarios.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

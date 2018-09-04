@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title%}<title>Copropiedades|Crear</title>{% endblock %}
+{% block contenido %}
+<div class="container">
+    {% if error %}
+        {{ error }}
+    {% endif %}
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input class="btn" type="submit" value='Crear'>
+</form>
+</div>
+{% endblock %}

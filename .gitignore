@@ -1,0 +1,60 @@
+
+
+
+# sftp configuration file
+sftp-config.json
+
+# Basics
+*.py[cod]
+__pycache__
+
+# Logs
+*.log
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+htmlcov
+
+# Translations
+*.mo
+*.pot
+
+# Compass
+.sass-cache
+
+# virtual environments
+.env
+.env_dev
+
+# User-uploaded media
+creatic/media/
+
+# Hitch directory
+tests/.hitch
+
+
+logs/
+sql/
+general_files/
+
+
+
+
+
+# Created by https://www.gitignore.io/api/django
+
+### Django ###
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+media
+
+
+
+

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title%}<title>Copropiedades|Listado</title>{% endblock %}
+{% block contenido %}
+<div class="container">
+<h2>Copropiedades</h2>
+<ul>
+    {% for object in object_list %}
+        <li><a href="{{ object.get_absolute_url }}">{{ object|upper }}</a></li>
+    {% empty %}
+        <h3>Aun no tienes Copropiedades</h3>
+    {% endfor %}
+</ul>
+<div class="fixed-action-btn">
+    <a class="btn-floating tooltipped btn-large red" data-position="left"  data-tooltip="Nueva Copropiedad" href="{% url 'crear' %}">
+        <i class="large material-icons">add</i>
+    </a>
+</div>
+
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('.tooltipped').tooltip();
+});
+</script>
+
+{% endblock %}
