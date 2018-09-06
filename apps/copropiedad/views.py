@@ -1,3 +1,5 @@
+# Django
+from django.urls import reverse_lazy
 from django.shortcuts import render
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
@@ -6,18 +8,16 @@ from django.contrib.admin.views.decorators import staff_member_required
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
-from . import forms
+from apps.copropiedad.forms import CopropiedadForm
 from apps.home.mixins import DashboardLoginRequiredMixin
 from . models import Copropiedad
 
 
 class CopropiedadCreateView(DashboardLoginRequiredMixin, CreateView):
-    model = Copropiedad
-    form_class = forms.CopropiedadForm
+    
+    form_class = CopropiedadForm
     template_name = 'copropiedad/copropiedad_form.html'
-
-    def get_success_url(self):
-        return reverse("lista")
+    success_url = reverse_lazy('lista')
 
 
 class CopropiedadListView(DashboardLoginRequiredMixin, ListView):
@@ -39,10 +39,10 @@ class CopropiedadDetailView(DashboardLoginRequiredMixin, DetailView):
 
 class CopropiedadUpdateView(DashboardLoginRequiredMixin, UpdateView):
     model = Copropiedad
-    form_class = forms.CopropiedadForm
+    form_class = CopropiedadForm
     template_name = 'copropiedad/copropiedad_update.html'
 
-
+    
     
     
 

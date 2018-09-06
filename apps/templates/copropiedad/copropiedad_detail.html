@@ -3,18 +3,32 @@
 
 {% block contenido %}
 {% block title%}<title>Copropiedades|{{ object.nombre_copropiedad }}</title>{% endblock %}
-<h3 aling="center">Detalle Copropiedad</h3>
+<div class="container">
+<br>
+<a href="{% url 'dashboard' %}" >Inicio</a>
+/
+<a href="#!" >{{ object.nombre_copropiedad }}</a>    
+<br>
+<br>
+<div class="row">
+    <div class="col s6">
+        <ul class="collection with-header">
+            <li class="collection-item avatar">
+                <h4>{{ object.nombre_copropiedad }}</h4>
+            </li> 
+        </ul>
+    </div>  
+    <div class="col s6">  
+        <img class="materialboxed" width="200" src="{{ object.foto.url }}">
+    </div>
+</div>
+
+
 <ul class="collection with-header">
-    <li class="collection-item avatar">
-    <img src="http://localhost:8000/media/coporpiedades/imagen/-1724934625.jpg" alt="" class="circle">
-    <h4>{{ object.nombre_copropiedad }}</h4>
-</li>  
-  
     <li class="collection-item"><div>Direccion: {{ object.direccion }}<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
     <li class="collection-item"><div>Telefono: {{ object.telefono }}<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
     <li class="collection-item"><div>Nit: {{ object.nit }}<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
     <li class="collection-item"><div>Descripcion: {{ object.descripcion }}<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
 </ul>
-
-
+</div>
 {% endblock %}

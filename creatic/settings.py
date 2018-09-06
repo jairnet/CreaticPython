@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -26,10 +27,10 @@ SECRET_KEY = 'y!&2=f4&5m5=p3*yzk=z+ocyu4#r6c_-1)6i%03s2(_4*kq+r%'
 DEBUG = True
 
 # Django en Heroku
-ALLOWED_HOSTS = ['placesoft.herokuapp.com']
+# ALLOWED_HOSTS = ['placesoft.herokuapp.com']
 
 # Django en local
-# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -107,6 +108,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    },
+    'OPTIONS': {
+    # ...
+        'timeout': 20,
+    # ...
     }
 }
 
@@ -148,7 +154,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static') ###mirar si funciona en heroku
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static') ###mirar si funciona en heroku
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
@@ -156,8 +162,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 """Nuevas configuraciones de Platzi"""
-# STATICFILES_FINDERS = [
-#     'django.contrib.staticfiles.finders.FileSystemFinder',
-#     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-# ]
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
 

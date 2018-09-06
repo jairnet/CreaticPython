@@ -1,13 +1,13 @@
 from django import forms
-from django.forms import ModelForm
-from .import models 
+
+from apps.copropiedad.models import Copropiedad 
 
 class CopropiedadForm(forms.ModelForm):
     class Meta:
-        model = models.Copropiedad
-        fields = ['nombre_copropiedad', 'direccion', 'telefono', 'nit', 'descripcion', 'foto']
+        model = Copropiedad
+        fields = '__all__'
 
-    def clean(self, *args, **kwargs):
-	    cleaned_data = super(CopropiedadForm, self).clean(*args, **kwargs)
+    # def clean(self, *args, **kwargs):
+	#     cleaned_data = super(CopropiedadForm, self).clean(*args, **kwargs)
 
 
