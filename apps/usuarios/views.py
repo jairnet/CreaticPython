@@ -1,12 +1,25 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 
 from django.contrib.auth.models import User
 
+from django.views.generic import ListView, DetailView
+
 from apps.usuarios.models import Perfil
+from apps.home.mixins import DashboardLoginRequiredMixin
 
 # Exections
 from django.db.utils import IntegrityError
+
+
+# class UserDetailView(DashboardLoginRequiredMixin, DetailView):
+#     model = User
+#     template_name = 'usuarios/user_detail.html'
+
+#     def get_success_url(self):
+#         return reverse("dashboard")
+
 
 def loginView(request):
     if request.method == 'POST':

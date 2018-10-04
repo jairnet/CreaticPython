@@ -5,7 +5,8 @@
     <br>
     <a href="{% url 'dashboard' %}" >Inicio</a>
     /
-    <a href="{% url 'lista' %}" >Copropiedades</a>    
+    <a href="{% url 'lista' %}" >Copropiedades</a>
+    /     
     <br>
     <br>
 <ul>
@@ -13,48 +14,47 @@
     <table class="responsive-table">
         <thead>
             <tr>
-                <th>Conjunto</th>
-                <th>Nit</th>
-                <th>Telefono</th>
-                <th>Direccion</th>
-                <th>Detalle</th>
+                <th>Nombre</th>
+                <th>Tipo</th>
+                <th>Piso</th>
+                <th>Bloque</th>
+                <th>Propietario</th>
             </tr>
         </thead>
         <tbody>
-            {% for object in object_list %}
+            {% for object in inmuebles_list %}
             <tr>
                 <td>
-                    {{ object.nombre }}
+                    <a href="{{ object.get_absolute_url }}">{{ object|upper }}</a>
                 </td>
                 <td>
-                    {{ object.nit }}
+                    {{ object.tipo_inmueble }}
                 </td>
                 <td>
-                    {{ object.telefono }}
+                    {{ object.piso }}
                 </td>
                 <td>
-                    {{ object.direccion }}
+                    {{ object.bloque }}
                 </td>  
-                <td>
-                    <a href="{{ object.get_absolute_url }}">Ver</a>
-                </td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
     {% else %}
         <div class="card-panel">
-                <h4 class="red-text text-red center">Aun no tienes Copropiedades</h4>
+            <h4 class="red-text text-red center">La Copropiedad aun no tiene inmuebles</h4>
         </div>
     {% endif %}
 </ul>
 <div class="fixed-action-btn">
-    <a class="btn-floating tooltipped btn-large red" data-position="left"  data-tooltip="Nueva Copropiedad" href="{% url 'crear' %}">
+    <a class="btn-floating tooltipped btn-large red" data-position="left"  data-tooltip="Nuevo Inmueble" href="{% url 'crear_inmueble' %}">
         <i class="large material-icons">add</i>
     </a>
 </div>
 
 </div>
+
+<h1>{{object.pk}}</h1>
 
 <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script> -->

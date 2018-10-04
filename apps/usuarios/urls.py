@@ -5,4 +5,7 @@ urlpatterns = [
     path('login',views.loginView, name="login"),
     path('logout',views.logoutView, name="logout"),
     path('signup',views.signupView, name="signup"),
+    # path(
+    #     'detail/<int:pk>',views.UserDetailView.as_view(), name="user_detail"
+    # ),
 ]

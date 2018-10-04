@@ -7,29 +7,29 @@ BOOL = (
 )
 
 GRUPO_INMUEBLE = (
-    ('', ''),
+    (0, ''),
     (1, 'Junta'),
     (2, 'Consejo'),
 )
 
 TIPO_INMUEBLE = (
     ('', ''),
-    (1, 'Casa'),
-    (2, 'Apartemento'),
-    (3, 'Duplex'),
-    (4, 'PentHouses'),
-    (5, 'Parcela'),
+    ('casa', 'Casa'),
+    ('apartamento', 'Apartamento'),
+    ('duplex', 'Duplex'),
+    ('penthouses', 'PentHouses'),
+    ('parcela', 'Parcela'),
 )
 
 GRUPO_RESIDENTE = (
-    ('', ''),
+    (0, ''),
     (1, 'Arrendatario'),
     (2, 'Junta'),
     (3, 'Consejo'),
 )
 
 TIPO_IDENTIDAD = (
-    ('',''),
+    (0,''),
     (1,'Cedula Ciudadania'),
     (2,'Pasaporte'),
     (3,'Cedula Extranjeria'),
@@ -38,7 +38,7 @@ TIPO_IDENTIDAD = (
 )
 
 MOTIVO_PQR = (
-    ('',''),
+    (0,''),
     (1,'Queja'),
     (2,'Peteicion'),
     (3,'Reclamo'),
@@ -47,14 +47,14 @@ MOTIVO_PQR = (
 )
 
 ESTADO_PQR = (
-    ('',''),
+    (0,''),
     (1,'Solucionado'),
     (2,'Sin Resolver'),
     (3,'En Proceso'),
 )
 
 ROL_USUARIO = (
-    ('',''),
+    (0,''),
     (1,'Habitante'),
     (2,'Administrador'),
     (3,'Revisor Fiscal'),

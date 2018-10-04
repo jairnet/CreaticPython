@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title%}
+    <title>Copropiedades|Eliminar</title>
+{% endblock %}
+{% block contenido %}
+<div class="container">
+    <br>
+    <a href="{% url 'dashboard' %}" >Inicio</a>
+    /
+    <a href="{% url 'lista' %}" >Copropiedades</a>
+    /
+    <a href="{% url 'detalle' object.pk %}" >Detalle: {{ object.nombre }}</a>    
+    <br>
+    <br>
+<form method="post">{% csrf_token %}
+    <div class="card-panel">
+            <h4 class="red-text text-red center">Esta seguro de eliminar la Coporpiedad <b>"{{ object }}"</b>?</h4>
+    </div>
+    <div class="row" aligt="center">
+        <div class="col s12 m6 offset-m4">
+            <button class="btn waves-effect waves-light red" type="submit" name="action">Confirmar
+                <i class="material-icons right">delete</i>
+            </button>
+            <a class="waves-effect waves-light btn" href="{% url 'detalle' object.pk %}">Cancelar <i class="material-icons right">cancel</i></a>
+        </div>
+    </div>
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+{% block title%}
+<title>Detalle|{{ request.user.username }}</title>
+{% endblock %}
+<div class="container">
+        <br>
+        <a href="{% url 'dashboard' %}" >Inicio</a>
+        /
+        <a href="{% url 'user_detail' request.user.username %}" >@{{ object.user.username }}</a>   
+        <br>
+        <br>
+</div>
+{% endblock %}

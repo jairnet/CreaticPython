@@ -2,33 +2,108 @@
 {% load static %}
 
 {% block contenido %}
-{% block title%}<title>Copropiedades|{{ object.nombre_copropiedad }}</title>{% endblock %}
+{% block title%}
+    <title>Copropiedades|{{ object.nombre }}</title>
+{% endblock %}
 <div class="container">
-<br>
 <a href="{% url 'dashboard' %}" >Inicio</a>
 /
-<a href="#!" >{{ object.nombre_copropiedad }}</a>    
+<a href="{% url 'lista' %}" >Copropiedades</a>
+/
+<a href="#!" >{{ object.nombre }}</a>    
 <br>
 <br>
+
+<!-- Inicio -->
 <div class="row">
-    <div class="col s6">
-        <ul class="collection with-header">
-            <li class="collection-item avatar">
-                <h4>{{ object.nombre_copropiedad }}</h4>
-            </li> 
-        </ul>
-    </div>  
-    <div class="col s6">  
-        <img class="materialboxed" width="200" src="{{ object.foto.url }}">
-    </div>
-</div>
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-image">
+            {% if object.foto %}  
+              <img src="{{ object.foto.url }}">
+            {% else %}
+              <img src="{% static 'img/default-house.jpg' %}">
+            {% endif %}
+              <span class="card-title">{{ object.nombre }}</span>
+            </div>
+            <div class="card-content">
+                <h5>{{ object.nombre }}</h5>
+                <ul class="collection">
+                    <li class="collection-item"><b>Direccion:</b> {{ object.direccion }}</li>
+                    <li class="collection-item"><b>Telefono:</b> {{ object.telefono }}</li>
+                    <li class="collection-item"><b>Nit:</b> {{ object.nit }}</li>
+                </ul>
+                <p><b>Descripcion.</b></p>
+                <p>{{ object.descripcion }}</p>
+            </div>
+            <!-- <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> -->
+          </div>
+        </div>
+        <div class="col s12 m6">
+            <h5>Lista Copropiedades</h5>
+            <hr>
+            {% if inmuebles %}
+            <table class="responsive-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Tipo</th>
+                        <th>Piso</th>
+                        <th>Bloque</th>
+                        <th>Detalles</th>
+                    </tr>
+                </thead>
+                <tbody>
+            
+                {% for object in inmuebles %}
+                <tr>
+                    <td>
+                        {{ object.nombre }}
+                    </td>
+                    <td>
+                        {{ object.tipo_inmueble }}
+                    </td>
+                    <td>
+                        {{ object.piso }}
+                    </td>
+                    <td>
+                        {{ object.bloque }}
+                    </td>
+                    <td>
+                        <a href="{% url 'detalle_inmueble' object.pk %}">Detalles</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            </table>
+            </div>
+            {% else %}
+                <div class="card-panel">
+                    <h5 class="red-text text-red center">Aun no tienes Inmuebles</h5>
+                </div>
+            {% endif %}
+        </div>
 
+      </div>
 
-<ul class="collection with-header">
-    <li class="collection-item"><div>Direccion: {{ object.direccion }}<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
-    <li class="collection-item"><div>Telefono: {{ object.telefono }}<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
-    <li class="collection-item"><div>Nit: {{ object.nit }}<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
-    <li class="collection-item"><div>Descripcion: {{ object.descripcion }}<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
-</ul>
+<!-- fin -->
+
+<div class="fixed-action-btn">
+    <a class="btn-floating tooltipped btn-large red" data-position="left" data-tooltip="Acciones">
+        <i class="large material-icons">add</i>
+    </a>
+    <ul>
+        <li><a class="btn-floating tooltipped red" data-position="left" data-tooltip="Eliminar Copropiedad" href="{% url 'eliminar' object.pk %}"><i class="material-icons">delete_forever</i></a></li>
+        <li><a class="btn-floating tooltipped green" data-position="left" data-tooltip="Editar Copropiedad" href="{% url 'editar' object.pk %}"><i class="material-icons">edit</i></a></li>
+        <li><a class="btn-floating tooltipped orange" data-position="left" data-tooltip="Crear Inmueble" href="{% url 'crear_inmueble' object.pk %}"><i class="material-icons">home</i></a></li>
+    </ul>
 </div>
+{% endblock %}
+{% block scripts %}
+<script>
+    $(document).ready(function(){
+        $('.fixed-action-btn').floatingActionButton();
+        $('.tooltipped').tooltip();
+    });
+</script>
 {% endblock %}

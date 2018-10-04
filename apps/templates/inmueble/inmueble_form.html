@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title%}<title>Inmueble|Crear</title>{% endblock %}
+{% block contenido %}
+<div class="container">
+    {% if error %}
+        {{ error }}
+    {% endif %}
+<form method="POST" enctype="multipart/form-data" >
+    {% csrf_token %}
+    <br>
+    <!-- {{ form.as_table }} -->
+    <br>
+    <div class="input-field col s12">
+    <select name="tipo_inmueble" id="id_tipo_inmueble">
+        <option value="" selected></option>
+        <option value="casa">Casa</option>
+        <option value="apartamento">Apartamento</option>
+        <option value="duplex">Duplex</option>
+        <option value="penthouses">PentHouses</option>
+        <option value="parcela">Parcela</option>
+    </select>
+    <label for="id_tipo_inmueble">Tipo inmueble:</label>
+    </div>
+    {% for error in form.tipo_inmueble.errors %}{{ error }}{% endfor %}
+
+<label for="id_nombre">Nombre:</label>
+<input type="text" name="nombre" maxlength="50" required id="id_nombre">
+{% for error in form.nombre.errors %}{{ error }}{% endfor %}
+<label for="id_area">Area:</label>
+<input type="number" name="area" required id="id_area">
+{% for error in form.area.errors %}{{ error }}{% endfor %}
+<label for="id_piso">Piso:</label>
+<input type="number" name="piso" required id="id_piso">
+{% for error in form.piso.errors %}{{ error }}{% endfor %}
+<label for="id_bloque">Bloque:</label>
+<input type="text" name="bloque" maxlength="10" required id="id_bloque">
+{% for error in form.bloque.errors %}{{ error }}{% endfor %}
+<label for="id_observacion">Observacion:</label>
+<textarea name="observacion" cols="40" rows="10" maxlength="1000" required id="id_observacion">
+</textarea>
+{% for error in form.observacion.errors %}{{ error }}{% endfor %}
+<label for="id_fecha_construcion">Fecha construcion:</label>
+<input type="text" name="fecha_construcion" class="datepicker" required id="id_fecha_construcion">
+{% for error in form.fecha_construcion.errors %}{{ error }}{% endfor %}
+
+<!-- form -->
+    <div class="row" aligt="center">
+        <div class="col s12 m6 offset-m5">
+        <button class="btn waves-effect waves-light" type="submit" name="action">Crear
+            <i class="material-icons right">send</i>
+        </button>
+        </div>
+    </div>
+</form>
+</div>
+{% endblock %}

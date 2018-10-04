@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block contenido %}
+{% block title%}
+    <title>Copropiedades|{{ object.nombre }}</title>
+{% endblock %}
+<div class="container">
+    <a href="{% url 'dashboard' %}" >Inicio</a>
+    /
+    <a href="{% url 'lista' %}" >Copropiedades</a>
+    /
+    <a href="#!" >{{ object.nombre }}</a>
+   
+    <br>
+    <br>
+
+    <ul class="collection with-header">
+        <li class="collection-header"><h4>{{ object.tipo_inmueble|capfirst }}: {{ object.nombre }}</h4></li>
+
+        <li class="collection-item">
+            <p><b>Area:</b> {{object.area}}</p>
+            <p><b>Piso:</b> {{object.piso}}</p>
+            <p><b>Bloque:</b> {{object.bloque}}</p>
+            <p><b>Fecha Construccion:</b> {{object.fecha_construcion}}</p>
+            <p><b>Observacion:</b> {{object.observacion}}</p>    
+        </li>
+    </ul>
+
+</div> <!-- cierra container -->
+
+<div class="fixed-action-btn">
+    <a class="btn-floating tooltipped btn-large red" data-position="left" data-tooltip="Acciones">
+        <i class="large material-icons">add</i>
+    </a>
+    <ul>
+        <li><a class="btn-floating tooltipped red" data-position="left" data-tooltip="Eliminar Inmueble" href="{% url 'eliminar_inmueble' object.pk %}"><i class="material-icons">delete_forever</i></a></li>
+        <li><a class="btn-floating tooltipped green" data-position="left" data-tooltip="Editar Inmueble" href="{% url 'editar_inmueble' object.pk %}"><i class="material-icons">edit</i></a></li>
+    </ul>
+</div>
+
+{% endblock %}
+{% block scripts %}
+<script>
+    $(document).ready(function(){
+        $('.fixed-action-btn').floatingActionButton();
+        $('.tooltipped').tooltip();
+    });
+</script>
+{% endblock %}

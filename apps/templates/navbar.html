@@ -1,56 +1,69 @@
 {% load static %}
-    <nav>
-        <div class="nav-wrapper indigo">
-            <a href="{% url 'dashboard' %}" class="brand-logo">PlaceSoft</a> 
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
+<nav>
+    <div class="nav-wrapper indigo">
+        <a href="{% url 'dashboard' %}" class="brand-logo">PlaceSoft</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        
+        <ul class="right hide-on-med-and-down">
+            
             <li>
-                <a href="">Inicio</a>
-            </li> 
-            <li class="collection-item avatar">  
-                <a href="" class="brand-logo">
-                    <img src="{% static 'img/default-profile.png' %}" height="35" class="circle"/>
-                </a>
+                <a href=""><i class="material-icons right">notifications_active</i><span class="new badge red">4</span></a>
+            </li>
+            <li>
+                <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             </li>
             
-            {% if user.is_authenticated %}
+            <!-- Dropdown Trigger -->
+            <li>
+                <a class="dropdown-trigger" href="#!" data-target="dropdown" data-beloworigin="true">@{{ request.user.username }}<i class="material-icons right">arrow_drop_down</i></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Dropdown Structure Large-->
+<ul id="dropdown" class="dropdown-content">
+    <ul class="collection">
+        <li class="collection-item avatar">
+          <img src="{% static 'img/default-profile.png' %}" alt="" class="circle">
+          <span class="title">{{ request.user.first_name }}  {{ request.user.last_name }}</span>
+        </li>
+        {% if user.is_authenticated %}
             <li>
                 <a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Salir</a>
             </li>
-            {% else %}
-            
-            <li>
-                <a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Ingresar</a>
-            </li>
-            {% endif %}
-                  
-            </ul>
-        </div>
-    </nav>
-    
-    <ul class="sidenav" id="mobile-demo">
-            <li>
-                    <a href="">Inicio</a>
-                </li> 
-                <li>  
-                    <a href="" class="brand-logo">
-                        <img src="{% static 'img/default-profile.png' %}" height="35" class="d-inline-block align-top rounded-circle"/>
-                    </a>
-                </li>
-                {% if user.is_authenticated %}
-                <li>
-                    <a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Salir</a>
-                </li>
-                {% else %}
-                
-                <li>
-                    <a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Ingresar</a>
-                </li>
-                {% endif %}
+        {% endif %}
     </ul>
-    
-    <script>
-    
-    </script>
-    
-    
+</ul>
+
+
+<!-- Nav Mobile-->
+<ul class="sidenav" id="mobile-demo">
+   
+    <li>
+        <a href=""><span class="new badge red">4</span><i class="material-icons right">notifications_active</i></a>
+    </li>
+    <li>
+        <!-- Dropdown Trigger Mobile-->
+        <a class="dropdown-trigger" href="#!" data-target="dropdown1" data-beloworigin="true">@{{ request.user.username }}<i class="material-icons right">details</i></a>
+    </li>                  
+</ul>
+
+<!-- Dropdown Structure Mobile-->
+<ul id="dropdown1" class="dropdown-content">
+    <ul class="collection">
+        <li class="collection-item avatar">
+          <img src="{% static 'img/default-profile.png' %}" alt="" class="circle">
+          <span class="title">{{ request.user.first_name }} {{ request.user.last_name }}</span>
+          <p>First Line</p>
+          <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+        </li>
+        {% if user.is_authenticated %}
+        <li>
+            <a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Salir</a>
+        </li>
+        {% endif %}
+    </ul>
+</ul>
+
+      
