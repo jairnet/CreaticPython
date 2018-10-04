@@ -27,10 +27,10 @@ SECRET_KEY = 'y!&2=f4&5m5=p3*yzk=z+ocyu4#r6c_-1)6i%03s2(_4*kq+r%'
 DEBUG = True
 
 # Django en Heroku
-# ALLOWED_HOSTS = ['placesoft.herokuapp.com']
+ALLOWED_HOSTS = ['placesoft.herokuapp.com']
 
 # Django en local
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
 # Application definition
 
